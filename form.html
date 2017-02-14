@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Grid</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #99FFCC;
+      height: 224%;
+    }
+
+    .sidenav1 {
+      background-color: #FAFA96;
+      height: auto;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #99FFCC;
+      padding: 45px;
+      color: #5a5a5a;
+       font-size: 25px;
+      font-weight:bold;
+      text-align:center;
+    }
+
+
+
+    .lineno {
+      color: #696969;
+      font-size: 15px; 
+    }
+
+    .nt {
+      color: #006600;
+      font-size: 15px;
+      font-weight:bold;
+    }
+
+    .na {
+      color: #999900;
+      font-size: 15px; 
+    }
+
+    .s {
+      color: #ED0086;
+      font-size: 15px; 
+    }
+
+    .tp {
+      color: -;
+      font-size: 18px; 
+      text-indent: 7%;
+      text-align:justify;
+    }
+
+    .tp1 {
+      color: -;
+      text-indent: 7%;
+      font-size: 18px; 
+     
+    }
+
+     /* Set Text H */
+     .h1 {
+      color: #0000CD;
+      font-weight:bold;
+      text-align:center;
+     }
+     .h3 {
+      color: #CD1039;
+      font-weight:bold;
+     }
+
+    .aa {
+       color: #5a5a5a;
+       font-size: 18px;
+      font-weight:bold;
+    }
+
+    .ab {
+       color: #5a5a5a;
+       font-size: 25px;
+      font-weight:bold;
+      text-align:center;
+    }
+    .selector {
+       color: #FFFFFF;
+      font-weight:bold;
+      width:auto;
+      height:auto;
+      background-color: #FF3CBB;
+      cursor:pointer;
+    }
+
+
+    /* Set Table */
+
+    table.three{
+      width:90%;
+      border:0;
+
+    } 
+
+    table.three th { font-weight:bold; 
+      border-bottom:1px solid #CCC; 
+      border-top:1px solid #CCC; 
+      background-color:#F2F9FF ;
+      color:#0000CC;
+      font-size: 15px;
+    }
+    table.three td { padding:5px; 
+      border-bottom:1px dotted #CCC; 
+      font-size: 15px;
+    }
+
+    /* Set Img */
+    .image-center {
+      text-align: center;
+      font-size: 14px;
+      font-style:italic;
+    }
+
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 20px;
+      }
+      .row.content {height: auto;} 
+
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    
+    <div class="col-sm-3 sidenav">
+      <h1 class="ab">[ BAITOEY'S BLOG ]</h1><br>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/lab03.html" class="aa">Home</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/bootstrap.html" class="aa">การใช้งาน Grid</a></li>
+        <li class="selector"><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/form.html" class="aa">การใช้งาน Form</a></li>
+              </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9 sidenav1">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h1 class="h1">การใช้งาน Form</h1>
+      <br>
+      <h3 class="h3">ฟอร์ม (Form) คืออะไร ?</h3>
+      <p class="tp">การใช้ CSS เพื่อกำหนดรูปแบบต่างๆ ให้กับคอนโทรลต่างๆ ของฟอร์มในเอกสารนั้น Bootstrap มีคลาสที่หลากหลายที่จะช่วยให้เราสามารถปรับปต่างคอนโทรลต่างๆ ของฟอร์มให้ดูสวยงาม และน่าใช้งานมากยิ่งขึ้น โดยเราสามารถใช้คลาสต่างๆ ได้กับแท็ก <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> และ <code>&lt;select&gt;</code> โดยเราต้องทำการเพิ่มคลาส <code>.form-control</code> ให้กับคอนโทรลเหล่านั้น โดยความกว้างของคอนโทรลนั้นจะกว้าง 100% เป็นค่าเริ่มต้น แต่เราสามารถกำหนดค่าความกว้างให้เป็นตามที่เราต้องการได้ โดยการใช้สไตล์ซีท <code>style="width: XXXpx;"</code>  และใช้งานร่วมกับ Grid ได้โดยความกว้างจะได้ขนาดเท่ากับขนาดของ Grid ตัวอย่างฟอร์ม</p>
+      <br>
+
+<div>
+  <h4>ตัวอย่างการสร้างฟอร์ม</h4>
+<div><pre><code class="lineno"> 1</code> <code class="nt">&lt;form</code> <code class="na">role=</code><code class="s">"form"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno"> 3</code>     <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_email"</code><code class="nt">&gt;</code>Email address<code class="nt">&lt;/label&gt;</code>
+<code class="lineno"> 4</code>     <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"email"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno"> 5</code>       <code class="na">id=</code><code class="s">"txt_email"</code> <code class="na">placeholder=</code><code class="s">"Enter email"</code><code class="nt">&gt;</code>
+<code class="lineno"> 6</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 7</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno"> 8</code>     <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_pass"</code><code class="nt">&gt;</code>Password<code class="nt">&lt;/label&gt;</code>
+<code class="lineno"> 9</code>     <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"password"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno">10</code>       <code class="na">id=</code><code class="s">"txt_pass"</code> <code class="na">placeholder=</code><code class="s">"Password"</code><code class="nt">&gt;</code>
+<code class="lineno">11</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">12</code>  <code class="nt">&lt;button</code> <code class="na">type=</code><code class="s">"submit"</code> <code class="na">class=</code><code class="s">"btn btn-default"</code><code class="nt">&gt;</code>
+<code class="lineno">13</code>    Submit
+<code class="lineno">14</code>  <code class="nt">&lt;/button&gt;</code>
+<code class="lineno">15</code> <code class="nt">&lt;/form&gt;</code>
+</pre></div>
+</div>
+
+
+<br>
+<h4>ผลลัพธ์ที่ได้ ดังรูป</h4>
+<br>
+
+<div class="image-center">
+  <img src="10.png" alt="รูปตัวอย่างการสร้างฟอร์ม"><p>รูปตัวอย่างการสร้างฟอร์ม</p>
+</div>
+
+<br>
+<h3 class="h3">Inline form</h3>
+<br>
+<p class="tp">การกำหนดรูปแบบ inline form เป็นการทำให้คอนโทรลต่างๆ ของฟอร์มอยู่ในแถวเดียวกัน โดยโดยปกติแล้วหากเราไม่กำหนดค่า <code>.form-inline</code> ในแท็ก <code>&lt;form&gt;</code> คอนโทรลต่างๆ ของฟอ์มจะอยู่คนละแถว หรือคนละบรรทัด เหมือนกับตัวอย่างแรก แต่หากเรากำหนดค่า <code>.form-inliine</code> เข้าไป คอนโทรลต่างๆ จะอยู่ในแถวเดียวกัน
+ในการทำ inline form นั้นเราจะต้องทำการกำหนดค่าความกว้างของคอนโทรล โดยการใช้สไตล์ซีทกำหนดค่า ซึ่งตัวอย่างจะใช้ <code>width</code> ในการกำหนดค่าความกว้างของคอนโทรล หากเราไม่กำหนดเบราเซอร์จะแสดงความกว้างเต็ม <code>100%</code> ซึ่งจะไม่เห็นความแตกต่างในการใช้ <code>.form-inline</code> และหากเราไม่ต้องการให้แสดง <code>&lt;label&gt;</code> เราสามารถกำหนดคลาส <code>.sr-only</code> ให้กับ <code>&lt;label&gt;</code> ได้ ตัวอย่างการใช้งาน</p>
+<br>
+
+
+<div>
+  <h4>ตัวอย่างการสร้าง Inline form</h4>
+<div><pre><code class="lineno"> 1</code> <code class="nt">&lt;form</code> <code class="na">role=</code><code class="s">"form"</code> <code class="na">class=</code><code class="s">"form-inline"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code>   <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_email"</code><code class="nt">&gt;</code>Email<code class="nt">&lt;/label&gt;</code>
+<code class="lineno"> 3</code>   <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"email"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno"> 4</code>     <code class="na">style=</code><code class="s">"width: 220px;"</code> <code class="na">id=</code><code class="s">"txt_email"</code> 
+<code class="lineno"> 5</code>     <code class="na">placeholder=</code><code class="s">"Enter email"</code><code class="nt">&gt;</code>
+<code class="lineno"> 6</code>   <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_pass"</code><code class="nt">&gt;</code>Password<code class="nt">&lt;/label&gt;</code>
+<code class="lineno"> 7</code>   <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"password"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno"> 8</code>     <code class="na">style=</code><code class="s">"width: 220px;"</code> <code class="na">id=</code><code class="s">"txt_pass"</code> 
+<code class="lineno"> 9</code>     <code class="na">placeholder=</code><code class="s">"Password"</code><code class="nt">&gt;</code>
+<code class="lineno">10</code>   <code class="nt">&lt;button</code> <code class="na">type=</code><code class="s">"submit"</code> <code class="na">class=</code><code class="s">"btn btn-default"</code><code class="nt">&gt;</code>
+<code class="lineno">11</code>     Submit
+<code class="lineno">12</code>   <code class="nt">&lt;/button&gt;</code>
+<code class="lineno">13</code> <code class="nt">&lt;/form&gt;</code>
+</pre></div>
+</div>
+
+<br>
+<h4>แสดงผลลัพธ์ที่ได้ ดังรูป</h4>
+<br>
+
+<div class="image-center">
+  <img src="11.png" alt="รูปแสดงการสร้างฟอร์มโดยใช้คลาส `.form-inline`"><p>รูปแสดงการสร้างฟอร์มโดยใช้คลาส <code>.form-inline</code></p>
+</div>
+
+
+<br>
+<h3 class="h3">Horizontal form</h3>
+<br>
+<p class="tp">เราสามารถจัดกลุ่มของคอนโทรลกับลาเบล (Label)ให้อยู่ในลักษณะของคอลัมน์ โดยการใช้ <code>.form-horizontal</code>  ร่วมกับกริด (Grid) และ <code>.form-group</code> ในการแบ่งคอลัมน์ ตัวอย่าง เช่น</p>
+<br>
+
+
+<div>
+  <h4>ตัวอย่างการสร้าง Horizontal form</h4>
+<div><pre><code class="lineno"> 1</code> <code class="nt">&lt;form</code> <code class="na">class=</code><code class="s">"form-horizontal"</code> <code class="na">role=</code><code class="s">"form"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno"> 3</code>     <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_email"</code> 
+<code class="lineno"> 4</code>       <code class="na">class=</code><code class="s">"col-sm-2 control-label"</code><code class="nt">&gt;</code>
+<code class="lineno"> 5</code>       Email
+<code class="lineno"> 6</code>     <code class="nt">&lt;/label&gt;</code>
+<code class="lineno"> 7</code>     <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-sm-5"</code><code class="nt">&gt;</code>
+<code class="lineno"> 8</code>       <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"email"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno"> 9</code>       <code class="na">id=</code><code class="s">"txt_email"</code> <code class="na">placeholder=</code><code class="s">"Email"</code><code class="nt">&gt;</code>
+<code class="lineno">10</code>     <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">11</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">12</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno">13</code>     <code class="nt">&lt;label</code> <code class="na">for=</code><code class="s">"txt_password"</code> 
+<code class="lineno">14</code>       <code class="na">class=</code><code class="s">"col-sm-2 control-label"</code><code class="nt">&gt;</code>
+<code class="lineno">15</code>       Password
+<code class="lineno">16</code>     <code class="nt">&lt;/label&gt;</code>
+<code class="lineno">17</code>     <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-sm-5"</code><code class="nt">&gt;</code>
+<code class="lineno">18</code>       <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"password"</code> <code class="na">class=</code><code class="s">"form-control"</code> 
+<code class="lineno">19</code>       <code class="na">id=</code><code class="s">"txt_password"</code> <code class="na">placeholder=</code><code class="s">"Password"</code><code class="nt">&gt;</code>
+<code class="lineno">20</code>     <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">21</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">22</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno">23</code>     <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-sm-offset-2 col-sm-5"</code><code class="nt">&gt;</code>
+<code class="lineno">24</code>       <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"checkbox"</code><code class="nt">&gt;</code>
+<code class="lineno">25</code>         <code class="nt">&lt;label&gt;</code>
+<code class="lineno">26</code>           <code class="nt">&lt;input</code> <code class="na">type=</code><code class="s">"checkbox"</code><code class="nt">&gt;</code> Remember me
+<code class="lineno">27</code>         <code class="nt">&lt;/label&gt;</code>
+<code class="lineno">28</code>       <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">29</code>     <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">30</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">31</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"form-group"</code><code class="nt">&gt;</code>
+<code class="lineno">32</code>     <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-sm-offset-2 col-sm-5"</code><code class="nt">&gt;</code>
+<code class="lineno">33</code>       <code class="nt">&lt;button</code> <code class="na">type=</code><code class="s">"submit"</code> <code class="na">class=</code><code class="s">"btn btn-default"</code><code class="nt">&gt;</code>
+<code class="lineno">34</code>         Sign in
+<code class="lineno">35</code>       <code class="nt">&lt;/button&gt;</code>
+<code class="lineno">36</code>     <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">37</code>   <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">38</code> <code class="nt">&lt;/form&gt;</code>
+</pre></div>
+</div>
+
+<br>
+<h4>แสดงผลลัพธ์ที่ได้ ดังรูป</h4>
+
+
+<div class="image-center">
+  <img src="12.png" alt="รูปแสดงการสร้างฟอร์มโดยใช้คลาส `.form-horizontal`"><p>รูปแสดงการสร้างฟอร์มโดยใช้คลาส <code>.form-horizontal</code></p>
+</div>
+
+
+<br><br>
+
+      <div class="image-center">
+          <img src="C02.gif">
+          <img src="C02.gif">
+          <img src="C02.gif">
+      </div>
+       <br><br>
+      <sh5><span class="glyphicon glyphicon-time"></span> Post by Sutida, Th 8, 2017.</h5>
+      <h5><span class="label label-danger">Grid</span> <span class="label label-primary">Form</span></h5><br>
+      
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p> จัดทำโดย : 58160436 นางสาวสุธิดา  คำหอมหวาน</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Grid</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #99FFCC;
+      height: 179%;
+    }
+
+    .sidenav1 {
+      background-color: #FAFA96;
+      height: auto;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #99FFCC;
+      padding: 45px;
+      color: #5a5a5a;
+       font-size: 25px;
+      font-weight:bold;
+      text-align:center;
+    }
+
+
+
+    .lineno {
+      color: #696969;
+      font-size: 15px; 
+    }
+
+    .nt {
+      color: #006600;
+      font-size: 15px;
+      font-weight:bold;
+    }
+
+    .na {
+      color: #999900;
+      font-size: 15px; 
+    }
+
+    .s {
+      color: #ED0086;
+      font-size: 15px; 
+    }
+
+    .tp {
+      color: -;
+      font-size: 18px; 
+      text-indent: 7%;
+      text-align:justify;
+    }
+
+    .tp1 {
+      color: -;
+      text-indent: 7%;
+      font-size: 18px; 
+     
+    }
+
+    /* Set Text H */
+    .h1 {
+      color: #0000CD;
+      font-weight:bold;
+      text-align:center;
+     }
+     .h3 {
+      color: #CD1039;
+      font-weight:bold;
+     }
+ 
+    .aa {
+       color: #5a5a5a;
+       font-size: 18px;
+      font-weight:bold;
+    }
+
+     .ab {
+       color: #5a5a5a;
+       font-size: 25px;
+      font-weight:bold;
+      text-align:center;
+    }
+   
+
+     .selector {
+      width:auto;
+      height:auto;
+      background-color: #FF3CBB;
+      cursor:pointer;
+    }
+    
+
+  
+    /* Set Table */
+
+    table.three{
+      width:90%;
+      border:0;
+
+    } 
+
+    table.three th { font-weight:bold; 
+      border-bottom:1px solid #CCC; 
+      border-top:1px solid #CCC; 
+      background-color:#F2F9FF ;
+      color:#0000CC;
+      font-size: 15px;
+    }
+    table.three td { padding:5px; 
+      border-bottom:1px dotted #CCC; 
+      font-size: 15px;
+    }
+
+    /* Set Img */
+    .image-center {
+      text-align: center;
+      font-size: 14px;
+      font-style:italic;
+    }
+
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 20px;
+      }
+      .row.content {height: auto;} 
+
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h1 class="ab">[ BAITOEY'S BLOG ]</h1><br>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/lab03.html" class="aa">Home</a></li>
+        <li class="selector"><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/bootstrap.html" class="aa">การใช้งาน Grid</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160436/887371/lab03/form.html" class="aa">การใช้งาน Form</a></li>
+              </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9 sidenav1">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h1 class="h1">การใช้งาน Grid ใน Bootstrap </h1>
+      <hr><br>
+      <h3 class="h3">Grid คืออะไร ?</h3>
+      <p class="tp">Grid เป็นเครื่องมือที่ช่วยให้เราสามารถออกแบบเลย์เอาท์เอกสาร HTML ได้ดีเหมือนกับการใช้แท็ก table แต่ความเร็วในการโหลดเอกสารนั้นการใช้ <code>div</code> จะช่วยให้โหลดเอกสารได้เร็วขึ้น นอกจากนั้นยังช่วยให้เราสามารถออกแบบเลย์เอาท์สำหรับมือถือ และบนพีซีได้พร้อมๆ กัน หรือที่เราเรียกว่า Responsive Web Design (RWD) ซึ่งจะช่วยลดระยะเวลาในการพัฒนาได้มากขึ้น
+      ระบบ Grid ของ Bootstrap นั้นจะแบ่งหน้าจอออกเป็น 12 คอลัมน์ โดยสามารถกำหนดค่าให้สามารถใช้ได้ทั้งมือถือ แท็บเล็ต หรือพีซีทั่วไป โดยคลาสกำหนดค่าความกว้างของคอลัมน์ ดังนี้</p>
+      <br>
+      <h4>ตารางการแสดงความกว้างของหน้าจอในอุปกรณ์แต่ละตัว</h4>
+      <br>
+
+<center>
+<table class="three" cellspacing="0">
+<tr>
+<th> </th>
+      <th>มือถือ</th>
+      <th>แท็บเล็ต</th>
+      <th>ทั่วไป</th>
+      <th>ขนาดใหญ่</th>
+</tr>
+
+<tr>
+<td>ขนาด</td>
+      <td>&lt;768px</td>
+      <td>&gt;=768px</td>
+      <td>&gt;=992px</td>
+      <td>&gt;=1200px</td>
+    </tr>
+<tr>
+<td>พื้นที่ใช้งาน</td>
+      <td>อัตโนมัติ</td>
+      <td>750px</td>
+      <td>790px</td>
+      <td>1170px</td>
+    </tr>
+<tr>
+<td>ชื่อคลาส</td>
+      <td><code>.col-xs-*</code></td>
+      <td><code>.col-sm-*</code></td>
+      <td><code>.col-md-*</code></td>
+      <td><code>.col-lg-*</code></td>
+    </tr>
+</tbody>
+</table>
+</center>
+<br><br>
+<h4>สรุปจากภาพด้านบนง่ายๆดังนี้</h4>
+<p class="tp1">• XS ==> ใช้กับหน้าจอขนาดเล็กกว่า Ipad แนวตั้งลงมา (หน้าจอสมาร์ทโฟนต่างๆ)</p>
+<p class="tp1">• SM ==> ขนาดหน้าจอตั้งแต่ Ipad แนวตั้ง</p>
+<p class="tp1">• MD ==> ขนาดความกว้างต่ำสุดที่หน้าจอ Ipad แนวนอน</p>
+<p class="tp1">• LG ==> หน้าจอที่กว้างกว่า 1200 pixels ขึ้นไป หรือให้เหมาะสมกับขนาดหน้าจอโน้ตบุคมาตราฐาน</p>
+<br>
+
+<p class="tp">การสร้าง Grid system นั้น Bootstrap แนะนำให้เราสร้างแถวและคอลัมน์ไว้ใน container โดยคลาส container ของ Bootstrap แบ่งออกเป็น 2 ประเภท คือ container และ container-fluid สำหรับ container นั้นจะแสดงผลเนื้อหาตามที่เรากำหนดความกว้างของหน้าจอ ส่วน container-fluid  นั้นจะแสดงผลเนื้อหาเต็มความกว้างของหน้าจอของเรา โดยในที่นี้คือเราจะใช้คลาส container ถัดมาเราจะต้องสร้างแถวโดยใช้ class= "row" ภายใต้ class= "container" โดยเราสามารถที่จะสร้างแถวได้ไม่จำกัด แต่แถวเหล่านั้นต้องอยู่ภายใต้ class= "container" ดังตัวอย่าง</p>
+
+<div><pre>
+<code class="lineno"> 1</code> <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"container"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"row"</code><code class="nt">&gt;</code><code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 3</code>               ......
+<code class="lineno"> 4</code> <code class="nt">&lt;/div&gt;</code>
+</pre></div>
+<br>
+<div>
+  <h4>ตัวอย่าง Grid</h4>
+<div><pre><code class="lineno"> 1</code> <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"container"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code> <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"row"</code><code class="nt">&gt;</code>
+<code class="lineno"> 3</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 4</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 5</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 6</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 7</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 8</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 9</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">10</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">11</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">12</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">13</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">14</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-1"</code><code class="nt">&gt;</code>.col-md-1<code class="nt">&lt;/div&gt;</code>
+<code class="lineno">15</code> <code class="nt">&lt;/div&gt;</code>
+<code class="lineno">16</code> <code class="nt">&lt;/div&gt;</code>
+</pre></div>
+</div>
+<br>
+
+<h4>ผลลัพธ์ที่ได้เมื่อรันผ่านเบราเซอร์ ดังรูป</h4>
+
+<div class="image-center">
+  <img src="01.png" alt="รูปตัวอย่างการใช้ Grid"><p>รูปตัวอย่างการใช้ Grid</p>
+</div>
+<br>
+<p class="tp">จากตัวอย่างเราแบ่งคอลัมน์ออกเป็น 12 คอลัมน์ โดยการใช้คลาส <code>.col-md-1</code> คลาส <code>col-sm-</code>, <code>col-md-</code> และ <code>col-lg-</code> นั้นเมื่อมีคอลัมน์เดียวจะมีขนาด 12 คอลัมน์ เราสามารถยุบรวมคอลัมน์ต่างๆ เข้าด้วยกันเพื่อให้ได้เลย์เอาท์ตามที่เราต้องการได้  ขนาดความกว้างของคอลัมน์เท่ากับ 12 ดังตัวอย่าง</p>
+<br>
+
+<div><pre><code class="lineno"> 1</code> <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"container"</code><code class="nt">&gt;</code>
+<code class="lineno"> 2</code> <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"row"</code><code class="nt">&gt;</code>
+<code class="lineno"> 3</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-8"</code><code class="nt">&gt;</code>.col-md-8<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 4</code>   <code class="nt">&lt;div</code> <code class="na">class=</code><code class="s">"col-md-4"</code><code class="nt">&gt;</code>.col-md-4<code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 5</code> <code class="nt">&lt;/div&gt;</code>
+<code class="lineno"> 6</code> <code class="nt">&lt;/div&gt;</code>
+</pre></div>
+<br>
+<h4>ผลลัพธ์ที่ได้เมื่อรันผ่านเบราเซอร์ ดังรูป</h4>
+<div class="image-center">
+  <img src="02.png" alt="รูปแสดงการแบ่งคอลัมน์"><p>รูปแสดงการแบ่งคอลัมน์</p>
+</div>
+<br>
+<p class="tp">การรวมคอลัมน์ ของ Grid นั้น เนื่องจากคอลัมน์ทั้งหมดมี 12 คอลัมน์ การรวมก็คือ เราจะแบ่งเป็นกี่คอลัมน์ก็ตามผลรวมทั้งหมดของคอลัมน์ (คลาส <code>.col-md-xx</code>) จะต้องเท่ากับ 12 จากตัวอย่าง <code>.col-md-8</code> กับ <code>.col-md-4</code> ผลรวมของตัวเลขคลาส (ตัวท้าย) จะเท่ากับ 12 จะเห็นได้ว่าระบบ Grid ของ Bootstrap นั้นจะช่วยให้เราสามารถออกแบบเลย์เอาท์ได้อย่างง่ายขึ้น เหมือนกับการใช้ <code>&lt;table&gt;</code> ที่หลายๆ คนเคยใช้กัน </p>
+<br>
+<h3 class="h3">การทำ offsetting ของ Grid</h3>
+<br>
+<p class="tp">การทำ Offsetting นั้นเป็นการเว้นคอลัมน์ที่อยู่ด้านขวาของ Grid ไว้ แล้วข้ามไปสร้างคอลัมน์ถัดไป เราจะใช้คลาส <code>.col-md-offset-*</code> ในการลบหรือเว้นช่องว่างของคอลัมน์ ตัวอย่างเช่น</p>
+<br>
+<div class="image-center">
+  <img src="03.png" alt="รูปแสดงการทำ Offset"><p class="caption">รูปแสดงการทำ Offset</p>
+</div>
+
+<br><br>
+
+      <div class="image-center">
+          <img src="07.gif">
+          <img src="07.gif">
+          <img src="07.gif">
+      </div>
+       <br><br>
+      <sh5><span class="glyphicon glyphicon-time"></span> Post by Sutida, Th 8, 2017.</h5>
+      <h5><span class="label label-danger">Grid</span> <span class="label label-primary">Form</span></h5><br>
+    
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p> จัดทำโดย : 58160436 นางสาวสุธิดา  คำหอมหวาน</p>
+</footer>
+
+</body>
+</html>
